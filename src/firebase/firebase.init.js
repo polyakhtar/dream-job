@@ -3,14 +3,13 @@ import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD_Mpsf4IkwpGnxAIukySD4DBhUgRja2a4",
-  authDomain: "dream-job-af2da.firebaseapp.com",
-  projectId: "dream-job-af2da",
-  storageBucket: "dream-job-af2da.appspot.com",
-  messagingSenderId: "174749960199",
-  appId: "1:174749960199:web:a8d9080501bb0ef2b102a2"
+  apiKey:process.env.REACT_APP_apiKey,
+  authDomain:process.env.REACT_APP_authDomain ,
+  projectId:process.env.REACT_APP_projectId ,
+  storageBucket:process.env.REACT_APP_storageBucket ,
+  messagingSenderId:process.env.REACT_APP_messagingSenderId, 
+  appId:process.env.REACT_APP_appId 
 };
 
 // Initialize Firebase

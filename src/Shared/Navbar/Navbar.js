@@ -1,13 +1,27 @@
 import React from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Navbar = () => {
+const {user,logout}=useContext(AuthContext);
+const handleLogOut=()=>{
+  logout()
+  .then(()=>{})
+  .catch(err=>console.error(err))
+}
 const submenu=<>
 <li><Link to='/'>Home</Link></li>
-<li><Link>Media</Link></li>
+<li><Link to='/media'>Media</Link></li>
 <li><Link>Message</Link></li>
-<li><Link>About</Link></li>
+<li><Link to='/about'>About</Link></li>
+{
+  user?.email?
+<button onClick={handleLogOut}>Logout</button>
+:
 <li><Link to='/login'>LogIn</Link></li>
+}
+
 </>
     return (
         <div className="navbar bg-blue-100">
